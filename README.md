@@ -138,3 +138,45 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 - 🌙 Responsive design for all devices
 
 ---
+
+## 🔐 API Security
+Ensuring the security of this application's API is crucial for protecting sensitive user data, managing access control, and maintaining trust in the platform.
+
+**✅ Key Security Measures**
+1. Authentication
+    - Uses JWT (JSON Web Tokens) to authenticate users.
+
+    - Tokens are issued upon login and must be included in all protected requests.
+
+    - Ensures that only verified users can access their data or perform actions.
+
+2. Authorization
+    - Role-based access control (RBAC) implemented:
+
+    - Guests can book properties.
+
+    - Hosts can manage listings.
+
+    - Admins can moderate platform content.
+
+    - Prevents users from accessing or modifying unauthorized resources.
+
+3. Rate Limiting
+    - Limits the number of requests a user/IP can make in a given timeframe.
+
+    - Protects the API from brute-force attacks and abuse.
+
+4. Input Validation & Sanitization
+    - All incoming data is validated (e.g., using Joi, Zod).
+
+    - Prevents SQL injection, XSS, and malformed request payloads.
+
+5. HTTPS Enforcement
+    - Ensures that all data in transit is encrypted.
+
+    - Protects sensitive information (like passwords, payment data) from being intercepted.
+
+6. Secure Payment Integration
+    - Uses trusted third-party payment processors like Stripe.
+
+    - Sensitive payment details are never stored on our servers.
