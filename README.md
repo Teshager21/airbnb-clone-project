@@ -143,44 +143,54 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 Ensuring the security of this application's API is crucial for protecting sensitive user data, managing access control, and maintaining trust in the platform.
 
 **✅ Key Security Measures**
-1. Authentication
-    - Uses JWT (JSON Web Tokens) to authenticate users.
+### 1. 🛡️ Authentication
 
-    - Tokens are issued upon login and must be included in all protected requests.
+- Uses **JWT (JSON Web Tokens)** to authenticate users.  
+- Tokens are issued upon login and must be included in all protected requests.  
+- Ensures that only verified users can access their data or perform actions.
 
-    - Ensures that only verified users can access their data or perform actions.
+---
 
-2. Authorization
-    - Role-based access control (RBAC) implemented:
+### 2. 🔑 Authorization
 
-    - Guests can book properties.
+- Implements **Role-Based Access Control (RBAC)**:
+  - 👤 **Guests** can book properties.
+  - 🏠 **Hosts** can manage listings.
+  - 🛠️ **Admins** can moderate platform content.
+- Prevents users from accessing or modifying unauthorized resources.
 
-    - Hosts can manage listings.
+---
 
-    - Admins can moderate platform content.
+### 3. 🚦 Rate Limiting
 
-    - Prevents users from accessing or modifying unauthorized resources.
+- Restricts the number of requests a user or IP address can make in a set timeframe.  
+- Helps protect the API from **brute-force attacks** and **abuse**.
 
-3. Rate Limiting
-    - Limits the number of requests a user/IP can make in a given timeframe.
+---
 
-    - Protects the API from brute-force attacks and abuse.
+### 4. 🧼 Input Validation & Sanitization
 
-4. Input Validation & Sanitization
-    - All incoming data is validated (e.g., using Joi, Zod).
+- All incoming data is validated using libraries like **Joi** or **Zod**.  
+- Protects against:
+  - 🐞 SQL Injection  
+  - 🦠 Cross-Site Scripting (XSS)  
+  - 🧨 Malformed request payloads
 
-    - Prevents SQL injection, XSS, and malformed request payloads.
+---
 
-5. HTTPS Enforcement
-    - Ensures that all data in transit is encrypted.
+### 5. 🔒 HTTPS Enforcement
 
-    - Protects sensitive information (like passwords, payment data) from being intercepted.
+- Enforces **HTTPS** across all endpoints.  
+- Ensures encrypted transmission of sensitive information like passwords and payment data.
 
-6. Secure Payment Integration
-    - Uses trusted third-party payment processors like Stripe.
+---
 
-    - Sensitive payment details are never stored on our servers.
+### 6. 💳 Secure Payment Integration
 
+- Uses trusted third-party payment processors like **Stripe**.  
+- Sensitive payment details are **never stored** on our servers.
+
+---
 ## 🚀 CI/CD Pipeline
 
 Continuous Integration (CI) and Continuous Deployment/Delivery (CD) are essential practices in modern software development. CI/CD pipelines automate the process of building, testing, and deploying code, enabling faster and more reliable software releases.
