@@ -124,3 +124,17 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 - Each payment is linked to one booking
 
 - Each payment is made by one user
+
+---
+
+## 🚀 Feature Breakdown
+
+- 🔐 User Authentication (Sign up, Login, Logout)
+- 🏘️ Browse available properties
+- 🗺️ Location-based search with map integration
+- 🗓️ Book and manage reservations
+- 🏠 Host dashboard to manage listings
+- 💬 Messaging between hosts and guests
+- 🌙 Responsive design for all devices
+
+---
