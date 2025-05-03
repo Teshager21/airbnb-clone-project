@@ -36,3 +36,91 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 - Stripe (payment integration)
 
 ---
+
+## 🗃️ Database Design
+
+**1. Users:**
+
+| Field         | Description                        |
+|---------------|------------------------------------|
+| `id`          | Unique identifier (Primary Key)    |
+| `name`        | Full name                          |
+| `email`       | Unique user email                  |
+| `password`    | Hashed password                    |
+| `role`        | Guest, Host, or Admin              |
+
+
+***🔁 Relationships:***
+
+- A user can create multiple properties
+- A user can make multiple bookings
+- A user can leave multiple reviews
+- A user can make multiple payments
+
+**2. Properties:**
+
+| Field         | Description                        |
+|---------------|------------------------------------|
+| `id`          | Unique identifier (Primary Key)    |
+| `title`       | Property title                     |
+| `description` | Details about the property         |
+| `location`    | Address or coordinates             |
+| `price`       | Per-night price                    |
+| `user_id`     | Foreign Key → Users (host owner)   |
+
+***🔁 Relationships:***
+
+- A property belongs to one user (host)
+- 
+- A property can have many bookings
+- 
+- A property can have many reviews
+
+**3. Bookings**
+
+| Field         | Description                        |
+|---------------|------------------------------------|
+| `id`          | Unique identifier (Primary Key)    |
+| `user_id`     | Foreign Key → Users (guest)        |
+| `property_id` | Foreign Key → Properties           |
+| `start_date`  | Check-in date                      |
+| `end_date`    | Check-out date                     |
+| `total_price` | Total calculated cost              |
+
+***🔁 Relationships:***
+
+- Each booking is made by one user
+
+- Each booking is for one property
+
+**4. Reviews**
+
+| Field         | Description                        |
+|---------------|------------------------------------|
+| `id`          | Unique identifier (Primary Key)    |
+| `user_id`     | Foreign Key → Users                |
+| `property_id` | Foreign Key → Properties           |
+| `rating`      | Score out of 5                     |
+| `comment`     | Optional text review               |
+
+***🔁 Relationships:***
+
+- A user can leave one review per booking
+
+- A property can have many reviews
+
+**5. Payments**
+| Field         | Description                        |
+|---------------|------------------------------------|
+| `id`          | Unique identifier (Primary Key)    |
+| `user_id`     | Foreign Key → Users (payer)        |
+| `booking_id`  | Foreign Key → Bookings             |
+| `amount`      | Payment amount                     |
+| `status`      | Paid / Pending / Failed            |
+| `method`      | Stripe / Credit Card / PayPal      |
+
+***🔁 Relationships:***
+
+- Each payment is linked to one booking
+
+- Each payment is made by one user
