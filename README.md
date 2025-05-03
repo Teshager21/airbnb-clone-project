@@ -180,3 +180,32 @@ Ensuring the security of this application's API is crucial for protecting sensit
     - Uses trusted third-party payment processors like Stripe.
 
     - Sensitive payment details are never stored on our servers.
+
+## 🚀 CI/CD Pipeline
+
+Continuous Integration (CI) and Continuous Deployment/Delivery (CD) are essential practices in modern software development. CI/CD pipelines automate the process of building, testing, and deploying code, enabling faster and more reliable software releases.
+
+---
+
+### 🧠 Why It’s Important
+
+Implementing a CI/CD pipeline ensures that:
+
+✅ Code changes are automatically tested and validated  
+✅ Bugs are detected early in the development cycle  
+✅ Deployments are consistent, repeatable, and faster  
+✅ The development workflow becomes more efficient and less error-prone  
+
+---
+
+### 🛠️ Tools We Use
+
+This project can leverage the following tools for setting up and managing the CI/CD pipeline:
+
+- ⚙️ **GitHub Actions** – Automates workflows like testing and deployment on every push or pull request  
+- 🐳 **Docker** – Containerizes the app to ensure consistent environments across development, testing, and production  
+- 📦 **Docker Hub** / **GitHub Container Registry** – Stores and distributes Docker images  
+- ☁️ *(Optional)* **Terraform**, **Ansible**, **AWS**, **GCP**, **Azure Pipelines** – For infrastructure provisioning and cloud deployment  
+
+---
+
